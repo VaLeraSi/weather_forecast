@@ -22,11 +22,11 @@ def retry(func):
 
 
 @retry
-def get_weather_from_api(lon: float, lan: float, lang: str = "en",
+def get_weather_from_api(lon: float,
+                         lan: float,
+                         lang: str = "en",
                          app_id: str = MySettings().app_id) -> WeatherResponse:
     url = f"https://api.openweathermap.org/data/2.5/weather?lat={lan}&lon={lon}&appid={app_id}&lang={lang}"
-
-    print(url)
 
     response = requests.get(url)
     response.raise_for_status()
