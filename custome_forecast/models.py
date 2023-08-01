@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 
 class WeatherResponse(BaseModel):
@@ -15,5 +15,6 @@ class WeatherResponse(BaseModel):
     id: int
     name: str
     cod: int
+
 
 

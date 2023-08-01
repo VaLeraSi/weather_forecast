@@ -1,4 +1,5 @@
 import psycopg2
+import requests
 import json
 
 
@@ -39,7 +40,6 @@ def save_weather_data():
 
 save_weather_data()
 
-
 def get_weather_from_db():
     conn = psycopg2.connect(
         host="localhost",
@@ -73,3 +73,5 @@ def get_weather_from_db():
 
 
 get_weather_from_db()
+#
+

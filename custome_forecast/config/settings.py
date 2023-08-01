@@ -1,4 +1,4 @@
-from pydantic import Field, validators, BaseSettings
+from pydantic import Field, BaseSettings
 
 
 class MySettings(BaseSettings):
