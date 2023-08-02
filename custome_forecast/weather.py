@@ -1,6 +1,7 @@
 import argparse
 
 from weather_from_api import WeatherFromAPI
+from config import MySettings, db_config
 
 
 def main():
@@ -9,12 +10,13 @@ def main():
     args = parser.parse_args()
 
     city = args.city
-    weather_api = WeatherFromAPI(city)
-    weather_data = weather_api.get_weather_from_db()
+    weather_from_api = WeatherFromAPI(app_id=MySettings().app_id, db_settings=db_config)
+    weather_data = weather_from_api.main_weather_data(city)
 
     return weather_data
 
 
 if __name__ == "__main__":
-    print(*main())
+    new_data = main()
+    print(*new_data)
 
